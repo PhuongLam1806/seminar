@@ -86,10 +86,14 @@ function CartFeature(props) {
                                     </button>
                                 </div>
                                 <span class="text-center w-1/5 font-semibold text-sm">
-                                    {product.product.salePrice}$
+                                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(
+                                        product.product.salePrice,
+                                    )}
                                 </span>
                                 <span class="text-center w-1/5 font-semibold text-sm">
-                                    {product.product.salePrice * product.quantity}$
+                                    {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(
+                                        product.product.salePrice * product.quantity,
+                                    )}
                                 </span>
                             </div>
                         </div>
@@ -101,12 +105,17 @@ function CartFeature(props) {
                         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
                         <div id="summary" class="w-1/4 flex justify-between float-right px-8 py-10">
                             <div class="flex justify-between ">
-                                <span class="font-semibold text-sm uppercase">Items {quantity}</span>
+                                <span class="font-semibold text-sm ">Items: {quantity}</span>
                                 {/* <span class="font-semibold text-sm">590$</span> */}
                             </div>
                             <div class="">
-                                <div class="flex font-semibold justify-between  text-sm uppercase">
-                                    <span>Total cost: ${total} </span>
+                                <div class="flex font-semibold justify-between  text-sm ">
+                                    <span>
+                                        Total cost: $
+                                        {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(
+                                            total,
+                                        )}{' '}
+                                    </span>
                                     <span> </span>
                                 </div>
                                 <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm mt-2 text-white uppercase w-full">

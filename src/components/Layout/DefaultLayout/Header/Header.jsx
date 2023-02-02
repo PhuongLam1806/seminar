@@ -98,29 +98,36 @@ function Header() {
                         );
                     })}
                 </ul>
-                {!isLoggedIn && (
-                    <div>
-                        <Button onClick={handleClickOpen} sx={{ fontSize: 16 }}>
-                            Login
-                        </Button>
-                    </div>
-                )}
-
-                {isLoggedIn && (
-                    <IconButton onClick={handleUserClick}>
-                        <AccountCircle />
+                <div className="flex">
+                    <IconButton
+                        size="large"
+                        aria-label="show 17 new notifications"
+                        color="inherit"
+                        onClick={handleCartClick}
+                    >
+                        <Badge badgeContent={cartItemsCount} color="error">
+                            <ShoppingCart />
+                        </Badge>
                     </IconButton>
-                )}
+                    {!isLoggedIn && (
+                        <div>
+                            <Button onClick={handleClickOpen} sx={{ fontSize: 16 }}>
+                                Login
+                            </Button>
+                        </div>
+                    )}
+
+                    {isLoggedIn && (
+                        <IconButton onClick={handleUserClick}>
+                            <AccountCircle />
+                        </IconButton>
+                    )}
+                </div>
             </div>
-            <div className={cx('flex flex-col items-center mt-20 mb-20')}>
+            <div className={cx('flex flex-col items-center mt-10 mb-20')}>
                 <h1 className={cx('font-semibold mt-0 mb-0')}>OURSHOP</h1>
-                <h3>{state}/Page</h3>
+                <h3>Chất lượng hàng đầu Việt Nam</h3>
             </div>
-            <IconButton size="large" aria-label="show 17 new notifications" color="inherit" onClick={handleCartClick}>
-                <Badge badgeContent={cartItemsCount} color="error">
-                    <ShoppingCart />
-                </Badge>
-            </IconButton>
 
             <Menu
                 keepMounted
