@@ -12,7 +12,7 @@ function Footer(props) {
                         <a href="https://flowbite.com/" class="flex items-center">
                             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
                             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                                Flowbite
+                                Phuong Lam
                             </span>
                         </a>
                     </div>
@@ -40,12 +40,12 @@ function Footer(props) {
                             </h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" class="hover:underline ">
+                                    <a href="https://github.com/PhuongLam1806" class="hover:underline ">
                                         Github
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">
+                                    <a href="https://discord.gg/Mgr3E9Hz" class="hover:underline">
                                         Discord
                                     </a>
                                 </li>
@@ -73,7 +73,7 @@ function Footer(props) {
                     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                         © 2023{' '}
                         <a href="https://flowbite.com/" class="hover:underline">
-                            Flowbite™
+                            Phuonglam™
                         </a>
                         . All Rights Reserved.
                     </span>
@@ -88,7 +88,10 @@ function Footer(props) {
                             </svg>
                             <span class="sr-only">Facebook page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <a
+                            href="https://www.instagram.com/phglmmm/"
+                            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        >
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     fill-rule="evenodd"
@@ -104,7 +107,10 @@ function Footer(props) {
                             </svg>
                             <span class="sr-only">Twitter page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <a
+                            href="https://github.com/PhuongLam1806"
+                            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        >
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     fill-rule="evenodd"

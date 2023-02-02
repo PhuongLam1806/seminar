@@ -101,11 +101,21 @@ const handleCart = (state = cart, action) => {
                     ...state,
                     {
                         ...product,
-                        quantity: 1,
+                        // quantity: 1,
                     },
                 ];
             }
             break;
+
+        case 'PLUSITEM':
+            //check if product already exists
+            const index = state.find((x) => x.id === product.id);
+            console.log('producttt', state);
+
+            if (index) {
+                //Increase the quantity
+                return state.map((x) => (x.id === product.id ? { ...x, quantity: x.quantity + 1 } : x));
+            }
 
         case 'DELITEM':
             const exist1 = state.find((x) => x.id === product.id);
@@ -114,6 +124,12 @@ const handleCart = (state = cart, action) => {
             } else {
                 return state.map((x) => (x.id === product.id ? { ...x, quantity: x.quantity - 1 } : x));
             }
+
+            break;
+
+        case 'REMOVEITEM':
+            const idNeedToRemove = action.payload;
+            return (state = state.filter((x) => x.id !== idNeedToRemove));
 
             break;
 

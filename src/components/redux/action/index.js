@@ -15,3 +15,17 @@ export const delCart = (product) => {
         payload: product,
     };
 };
+
+export const plusCart = (product) => {
+    return {
+        type: 'PLUSITEM',
+        payload: product,
+    };
+};
+
+export const removeCart = (product) => {
+    return {
+        type: 'REMOVEITEM',
+        payload: product,
+    };
+};
