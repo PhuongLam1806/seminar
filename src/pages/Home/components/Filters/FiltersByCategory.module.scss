@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 25px;
+    width: 250px;
+}
+
+.sidebar {
+    li {
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: rgba(59, 33, 206, 0.347);
+        }
+    }
+}

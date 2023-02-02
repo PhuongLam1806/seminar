@@ -1,0 +1,13 @@
+.filerViewer {
+    display: flex;
+    flex-grow: row wrap;
+    align-items: center;
+
+    margin: spacing(2, 0);
+    list-style-type: none;
+
+    & > li {
+        margin: 10px;
+        padding: spacing(1);
+    }
+}

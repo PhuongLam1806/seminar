@@ -1,0 +1,30 @@
+.wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.priceBox {
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.salePrice {
+    font-size: 30px;
+    margin-right: 30px;
+
+    font-weight: bold;
+}
+
+.originalPrice {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.promotionPercent {
+}

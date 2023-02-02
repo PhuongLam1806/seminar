@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+    background-image: radial-gradient(
+        circle farthest-corner at 5.3% 17.2%,
+        rgba(255, 208, 253, 1) 0%,
+        rgba(255, 237, 216, 1) 90%
+    );
+}
+
+.inner {
+    // background-color: #ccc;
+    width: 78%;
+    // max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store-name {
+    display: flex;
+    // align-items: center;
+    gap: 5px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3958;
+}
+
+.hhi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

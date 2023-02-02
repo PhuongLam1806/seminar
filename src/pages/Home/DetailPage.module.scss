@@ -1,0 +1,15 @@
+.wrap {
+    background-color: #cccccc1f;
+    padding: 20px;
+    border-radius: 10px;
+}
+.left {
+    width: 350px;
+    padding: 5px;
+    border-right: 1px solid #ccc;
+}
+
+.right {
+    padding: 5px;
+    flex: 1 1 auto;
+}

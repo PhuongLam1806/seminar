@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.sideBar {
+    width: 250px;
+}
+.product {
+    flex: 1 1 auto;
+}
+
+.left {
+    width: 250px;
+}
+
+.right {
+    flex-grow: 10;
+}
