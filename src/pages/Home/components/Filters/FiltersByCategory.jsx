@@ -20,7 +20,7 @@ function FiltersByCategory({ onChange }) {
         (async () => {
             try {
                 const list = await categoryApi.getAll();
-                // console.log('hh', response);
+                console.log('hh', list);
                 setCategoryList(
                     list.map((x) => ({
                         id: x.id,
@@ -39,17 +39,17 @@ function FiltersByCategory({ onChange }) {
         }
     };
     return (
-        <Box className={cx('wrapper')}>
-            <Typography>DANH MỤC SẢN PHẨM</Typography>
+        <div className={cx('wrapper')}>
+            <h4 className={cx('category')}>DANH MỤC SẢN PHẨM</h4>
 
             <ul className={cx('sidebar')}>
-                {categoryList.map((category) => (
+                {categoryList.map((category, index) => (
                     <li onClick={() => handleCategoryClick(category)} key={category.id}>
-                        {category.name}
+                        {category.id}.{category.name}
                     </li>
                 ))}
             </ul>
-        </Box>
+        </div>
     );
 }
 

@@ -46,10 +46,10 @@ function DetailPage(props) {
                 <Container>
                     <Paper elevation={0}>
                         <Grid container className={cx('wrap')}>
-                            <Grid xs={4} className={cx('left')}>
+                            <Grid xs={12} lg={4} className={cx('left')}>
                                 <ProductThumbnail product={product} />
                             </Grid>
-                            <Grid xs={8} className={cx('right')}>
+                            <Grid xs={12} lg={8} className={cx('right')}>
                                 <ProductInfo product={product} />
                                 <AddToCartForm onSubmit={handleAddToCartSubmit} />
                             </Grid>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Chip, makeStyles } from '@mui/material';
 import styles from './FilterViewer.module.scss';
 import classNames from 'classnames/bind';
+import { logDOM } from '@testing-library/react';
 
 const cx = classNames.bind(styles);
 
@@ -52,15 +53,19 @@ const FILTER_LIST = [
         },
         onToggle: () => {},
     },
-    // {
-    //     id: 4,
-    //     getLabel: (filters) => 'Danh mục',
-    //     isActive: () => true,
-    //     isVisible: (filters) => true,
-    //     isRemovable: true,
-    //     onRemove: (filter) => {},
-    //     onToggle: (filter) => {},
-    // },
+    {
+        id: 4,
+        getLabel: (filters) => `Danh mục: ${filters['category.id']}`,
+        isActive: () => true,
+        isVisible: (filters) => filters['category.id'],
+        isRemovable: true,
+        onRemove: (filters) => {
+            const newFilters = { ...filters };
+            delete newFilters['category.id'];
+            return newFilters;
+        },
+        onToggle: (filters) => {},
+    },
 ];
 
 FilterViewer.propTypes = {
@@ -73,6 +78,10 @@ function FilterViewer({ filters = {}, onChange = null }) {
         return FILTER_LIST.filter((x) => x.isVisible(filters));
     }, [filters]);
     // const classes = useStyles();
+    console.log(
+        'huhu',
+        FILTER_LIST.filter((x) => x.isVisible(filters)),
+    );
     return (
         <Box component="ul" className={cx('filerViewer')}>
             {visibleFilters.map((x) => (

@@ -20,7 +20,7 @@ function Contact(props) {
                     </div>
                 </div>
                 <div className="">
-                    <div className="col-md flex justify-center">
+                    <div className="col-md flex mbi:flex-col-reverse sm:flex-row justify-center">
                         <form class="w-full max-w-lg">
                             <div class="w-full px-3">
                                 <label

@@ -93,13 +93,13 @@ function Home(props) {
         <Box>
             <Container maxWidth="xl">
                 {/* <ProductFilters /> */}
-                <Grid container spacing={3} className={cx('w[200]')}>
-                    <Grid item xs={2}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={12} lg={2}>
                         <Paper elevation={1}>
                             <ProductFilters filters={filters} onChange={handleFilterChange} />
                         </Paper>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} sm={12} lg={10}>
                         <Paper elevation={1}>
                             <ProductSort currentSort={filters._sort} onChange={handleSortChange} />
                             {/* <FilterViewer filters={filters} onChange={setNewFilters} /> */}

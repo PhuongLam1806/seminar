@@ -28,3 +28,10 @@
 
 .promotionPercent {
 }
+
+@media (max-width: 480px) {
+    .priceBox {
+        display: flex;
+        flex-flow: wrap;
+    }
+}

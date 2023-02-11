@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartItemsCountSelector, cartTotalCountSelector } from './selector';
 import { addCart, delCart, plusCart, removeCart } from '../redux/action';
+import styles from './CartFeature.module.scss';
+import classNames from 'classnames/bind';
 
 CartFeature.propTypes = {};
+
+const cx = classNames.bind(styles);
 
 function CartFeature(props) {
     const dispatch = useDispatch();
@@ -33,7 +37,7 @@ function CartFeature(props) {
                 {products.map((product) => (
                     <div key={product.id} class="flex justify-center rounded-2xl bg-[#cccccc30] shadow-md my-10 ">
                         <div class="w-3/4  px-10 py-10">
-                            <div class="flex mt-10 mb-5">
+                            <div class="sm:flex mbi:hidden mt-10 mb-5">
                                 <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
                                 <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
                                     Quantity
@@ -45,8 +49,8 @@ function CartFeature(props) {
                                     Total
                                 </h3>
                             </div>
-                            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                                <div class="flex w-2/5">
+                            <div class="flex mbi:flex-col sm:flex-row items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                                <div class="flex mbi:w-full sm:w-2/5">
                                     <div class="w-20">
                                         <img
                                             class="h-24"
@@ -103,7 +107,7 @@ function CartFeature(props) {
                 {quantity ? (
                     <>
                         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
-                        <div id="summary" class="w-1/4 flex justify-between float-right px-8 py-10">
+                        <div id="summary" class="sm:w-1/4 mbi:w-full flex justify-between float-right px-8 py-10">
                             <div class="flex justify-between ">
                                 <span class="font-semibold text-sm ">Items: {quantity}</span>
                                 {/* <span class="font-semibold text-sm">590$</span> */}

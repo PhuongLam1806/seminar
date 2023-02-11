@@ -13,7 +13,7 @@ function Product({ product }) {
         ? `https://api.ezfrontend.com${product.thumbnail?.url}`
         : `https://via.placeholder.com/200`;
 
-    console.log('anh', product);
+    // console.log('anh', product);
     const handleClick = () => {
         Navigate(`${product.id}`);
     };
