@@ -11,7 +11,7 @@ function About(props) {
     return (
         <div className="text-">
             <div className="container py-5 my-5">
-                <div className="row flex">
+                <div className="row sm:flex ">
                     <div className="col-md-6">
                         <h1 className="text-primary fw-bold mb-4">About US</h1>
                         <p className="lead mb-4">

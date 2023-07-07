@@ -14,7 +14,7 @@ const publicRoutes = [
     { path: `/:productId`, component: DetailPage, layout: HeaderOnly },
     { path: `/cart`, component: CartFeature, layout: HeaderOnly },
     { path: '/about', component: About, layout: HeaderOnly },
-    { path: '/profile', component: Profile },
+    { path: '/profile', component: Profile, layout: HeaderOnly },
     { path: '/contact', component: Contact, layout: HeaderOnly },
 ];
 

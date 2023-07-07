@@ -3,13 +3,25 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import svg from '../../../assets/index';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Dialog, DialogContent, DialogActions, Box, IconButton, Menu, MenuItem, Badge } from '@mui/material';
+import {
+    Button,
+    Dialog,
+    DialogContent,
+    DialogActions,
+    Box,
+    IconButton,
+    Menu,
+    MenuItem,
+    Badge,
+    Typography,
+} from '@mui/material';
 import LoginForm from '../../../LoginForm/LoginForm';
 import RegisterForm from '../../../RegisterForm/RegisterForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { AccountCircle, ShoppingCart } from '@mui/icons-material';
 import { logout } from '../../../Auth/userSlice';
 import { cartItemsCountSelector } from '../../../Cart/selector';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -22,6 +34,8 @@ const MODE = {
     LOGIN: 'login',
     REGISTER: 'register',
 };
+
+const pages = ['HOME', 'CONTACT', 'ABOUT'];
 function Header() {
     const dispatch = useDispatch();
     const cartItemsCount = useSelector(cartItemsCountSelector);
@@ -57,7 +71,7 @@ function Header() {
     const handleCartClick = () => {
         navigate('/cart');
     };
-    const pages = ['HOME', 'CONTACT', 'ABOUT'];
+    //const pages = ['HOME', 'CONTACT', 'ABOUT'];
     const [state, setState] = useState('HOME');
     const handleNav = (page) => {
         setState(`${page}`);
@@ -65,13 +79,83 @@ function Header() {
 
     console.log('trang thái', state);
 
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = (page) => {
+        if (page === 'ABOUT') {
+            navigate('/about');
+        }
+
+        if (page === 'CONTACT') {
+            navigate('/contact');
+        }
+
+        if (page === 'HOME') {
+            navigate('/');
+        }
+
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('flex items-center')}>
-                    <img src={svg.logo} className={cx('mr-2')} />
-                    <div className={cx('name')}>
-                        <Link to="/">PLAM</Link>
+                    <div className={cx('flex items-center sm:flex mbi:hidden')}>
+                        <img src={svg.logo} className={cx('mr-2')} />
+                        <div className={cx('name')}>
+                            <Link to="/">PLAM</Link>
+                        </div>
+                    </div>
+                    <div className={cx('mbi:flex sm:hidden')}>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'hidden' } }}>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'block', md: 'none' },
+                                }}
+                            >
+                                {pages.map((page) => (
+                                    <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
                     </div>
                 </div>
 

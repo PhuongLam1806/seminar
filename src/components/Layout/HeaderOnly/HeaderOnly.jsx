@@ -8,7 +8,7 @@ function HeaderOnly({ children }) {
     return (
         <div className={cx('wrapper')}>
             <Header />
-            <div className={cx('container w-[1200px]')}>
+            <div className={cx('container')}>
                 <div className={cx('')}>{children}</div>
             </div>
         </div>
